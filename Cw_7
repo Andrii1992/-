@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Globalization;
+namespace ConsoleApp29
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            //string input = "02-02-2017";
+            //DateTime dateTime;
+            //if (DateTime.TryParse(input, out dateTime))
+            //{
+            //    Console.WriteLine(dateTime);
+            //}
+
+
+            string dateString = "Mon 16 Jun 8:30 AM 2008";
+            string format = "ddd dd MMM h:mm tt yyyy";
+            DateTime dateTime;
+            if (DateTime.TryParseExact(dateString, format, CultureInfo.InvariantCulture,DateTimeStyles.None, out dateTime))
+            {
+                Console.WriteLine(dateTime);
+            }
+
+
+
+            Console.ReadKey();
+
+        }
+    }
+}
